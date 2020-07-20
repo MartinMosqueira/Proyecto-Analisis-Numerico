@@ -1,3 +1,4 @@
+from sympy import *
 import math
 
 class Funcion():
@@ -5,32 +6,22 @@ class Funcion():
         self.funcion=funcion
         self.x=x
         self.y=y
-        self.lista=[]
 
-    def lista_funcion(self):
-        for i in self.funcion:
-            self.lista.append(i) 
+    def generar_funcion(self): 
+        self.funcion=sympify(self.funcion)
+
+    def reemplazar_valores(self):
+        x, y = symbols('x y') 
+        self.funcion = self.funcion.subs([(x, self.x), (y, self.y)])
     
-    def reemplazar_valores_lista(self):
-        for n, i in enumerate(self.lista):
-            if i == 'x':
-                self.lista[n] = str(self.x)
-            if i == 'y':
-                self.lista[n] = str(self.y)
-    
-    def calcular_expresiones_lista(self):
-        for n, i in enumerate(self.lista):        
-            if i == 'p':
-                self.lista.pop(n+1)
-                self.lista[n] = 'math.pi'
-        StrA = "".join(self.lista)
-        print(StrA)
+    def reemplazar_valores_trigonometria(self):
+        pin, e = symbols('pin e')
+        self.funcion = self.funcion.subs([(pin, math.pi), (e, math.e)])
+        return self.funcion  
 
 
-
-
-# funcion='3*x+5*y+pi'
+# funcion='pin'
 # instancia=Funcion(funcion,9,4)
-# instancia.lista_funcion()
-# instancia.reemplazar_valores_lista()
-# instancia.calcular_expresiones_lista()
+# instancia.generar_funcion()
+# instancia.reemplazar_valores()
+# instancia.reemplazar_valores_trigonometria()
