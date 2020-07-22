@@ -17,7 +17,9 @@ class Funcion():
     def reemplazar_valores_trigonometria(self):
         pin, e = symbols('pin e')
         self.funcion = self.funcion.subs([(pin, math.pi), (e, math.e)])
+        print(self.funcion)
         return self.funcion  
+
 
 
 # funcion='pin'
