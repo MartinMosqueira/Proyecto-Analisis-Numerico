@@ -14,42 +14,39 @@ class cuarto_orden():
 
     def k1(self):
         instancia=Funcion(self.funcion,self.x,self.y)
-        instancia.generar_funcion()
-        instancia.reemplazar_valores()
-        self.k_1=instancia.reemplazar_valores_trigonometria()
+        self.k_1=instancia.generar_funcion()
+        return self.k_1
 
     def k2(self):
         x=self.x+self.h/2
         y=self.y+self.h/2*self.k_1
         instancia=Funcion(self.funcion,x,y)
-        instancia.generar_funcion()
-        instancia.reemplazar_valores()
-        self.k_2=instancia.reemplazar_valores_trigonometria()
+        self.k_2=instancia.generar_funcion()
+        return self.k_2
 
     def k3(self):
         x=self.x+self.h/2
         y=self.y+self.h/2*self.k_2
         instancia=Funcion(self.funcion,x,y)
-        instancia.generar_funcion()
-        instancia.reemplazar_valores()
-        self.k_3=instancia.reemplazar_valores_trigonometria()       
+        self.k_3=instancia.generar_funcion()       
+        return self.k_3
 
     def k4(self):
         x=self.x+self.h
         y=self.y+self.h*self.k_3
         instancia=Funcion(self.funcion,x,y)
-        instancia.generar_funcion()
-        instancia.reemplazar_valores()
-        self.k_4=instancia.reemplazar_valores_trigonometria()
+        self.k_4=instancia.generar_funcion()
+        return self.k_4
 
     def k(self):
         k=1/6*(self.k_1+2*self.k_2+2*self.k_3+self.k_4)
-        print(k) 
-        
-instancia=cuarto_orden('-2*y+4*e**-x',0,2,0.2)
-instancia.k1()
-instancia.k2()
-instancia.k3()
-instancia.k4()
-instancia.k()
+        return k
+ 
+ 
+# instancia=cuarto_orden('-2*y+4*e**-x',0,2,0.2)
+# instancia.k1()
+# instancia.k2()
+# instancia.k3()
+# instancia.k4()
+# instancia.k()
 

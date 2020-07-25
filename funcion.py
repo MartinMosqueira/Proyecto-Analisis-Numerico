@@ -7,7 +7,7 @@ class Funcion():
         self.x=x
         self.y=y
 
-    def generar_funcion(self): 
+    def obtener_funcion(self): 
         self.funcion=sympify(self.funcion)
 
     def reemplazar_valores(self):
@@ -17,9 +17,12 @@ class Funcion():
     def reemplazar_valores_trigonometria(self):
         pin, e = symbols('pin e')
         self.funcion = self.funcion.subs([(pin, math.pi), (e, math.e)])
-        print(self.funcion)
-        return self.funcion  
 
+    def generar_funcion(self):
+        self.obtener_funcion()
+        self.reemplazar_valores()
+        self.reemplazar_valores_trigonometria()
+        return self.funcion
 
 
 # funcion='pin'
