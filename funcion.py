@@ -24,7 +24,6 @@ class Funcion():
         self.reemplazar_valores_trigonometria()
         return self.funcion
 
-
 # funcion='pin'
 # instancia=Funcion(funcion,9,4)
 # instancia.generar_funcion()
