@@ -36,7 +36,9 @@ class Datos():
         self.lista=['X','Y','K1','K2','K']
         for i in range(int(self.iteracion)):
             self.lista.append(self.x1)
-            self.lista.append(self.y)          
+            self.lista_x.append(self.x1)
+            self.lista.append(self.y)
+            self.lista_y.append(self.y)       
             instancia=segundo_orden(self.funcion,self.x1,self.y,self.h)    
             instancia.k1()
             self.lista.append(instancia.k1())
@@ -49,12 +51,16 @@ class Datos():
         self.lista=[self.lista[i:i+5] for i in range(0,len(self.lista),5)]
         table = AsciiTable(self.lista)
         print(table.table)
+        plot(self.lista_x,self.lista_y,'o')
+        show()
 
     def interfaz_datos_tercer_orden(self):
         self.lista=['X','Y','K1','K2','K3','K']
         for i in range(int(self.iteracion)):
             self.lista.append(self.x1)
+            self.lista_x.append(self.x1)
             self.lista.append(self.y)
+            self.lista_y.append(self.y)
             instancia=tercer_orden(self.funcion,self.x1,self.y,self.h)    
             instancia.k1()
             self.lista.append(instancia.k1())
@@ -69,12 +75,16 @@ class Datos():
         self.lista=[self.lista[i:i+6] for i in range(0,len(self.lista),6)]
         table = AsciiTable(self.lista)
         print(table.table)
+        plot(self.lista_x,self.lista_y,'o')
+        show()
 
     def interfaz_datos_cuarto_orden(self):
         self.lista=['X','Y','K1','K2','K3','K4','K']
         for i in range(int(self.iteracion)):
             self.lista.append(self.x1)
+            self.lista_x.append(self.x1)
             self.lista.append(self.y)
+            self.lista_y.append(self.y)
             instancia=cuarto_orden(self.funcion,self.x1,self.y,self.h)    
             instancia.k1()
             self.lista.append(instancia.k1())
@@ -91,6 +101,9 @@ class Datos():
         self.lista=[self.lista[i:i+7] for i in range(0,len(self.lista),7)]
         table = AsciiTable(self.lista)
         print(table.table)
+        plot(self.lista_x,self.lista_y,'o')
+        show()
 
-instancia=Datos('-2*y+4*e**-x',0,1,2,0.2)
-instancia.interfaz_datos_primer_orden()
+
+# instancia=Datos('-2*y+4*e**-x',0,1,2,0.2)
+# instancia.interfaz_datos_tercer_orden()

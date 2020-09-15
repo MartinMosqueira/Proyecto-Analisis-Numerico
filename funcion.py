@@ -15,8 +15,8 @@ class Funcion():
         self.funcion = self.funcion.subs([(x, self.x), (y, self.y)])
     
     def reemplazar_valores_trigonometria(self):
-        pin, e = symbols('pin e')
-        self.funcion = self.funcion.subs([(pin, math.pi), (e, math.e)])
+        e = symbols('e')
+        self.funcion = self.funcion.subs([(pi, math.pi), (e, math.e)])
 
     def generar_funcion(self):
         self.obtener_funcion()
@@ -24,8 +24,8 @@ class Funcion():
         self.reemplazar_valores_trigonometria()
         return self.funcion
 
-# funcion='pin'
+# funcion='(pi+e)/(x+y)'
 # instancia=Funcion(funcion,9,4)
 # instancia.generar_funcion()
-# instancia.reemplazar_valores()
-# instancia.reemplazar_valores_trigonometria()
+# expresion=cos(3)**2
+# print(expresion)
