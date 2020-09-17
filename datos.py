@@ -29,7 +29,9 @@ class Datos():
         self.lista=[self.lista[i:i+3] for i in range(0,len(self.lista),3)]
         table = AsciiTable(self.lista)
         print(table.table)
-        plot(self.lista_x,self.lista_y,'o')
+        plot(self.lista_x,self.lista_y,'o-')
+        xlabel('Eje X')
+        ylabel('Eje Y')
         show()
 
     def interfaz_datos_segundo_orden(self):
@@ -51,7 +53,9 @@ class Datos():
         self.lista=[self.lista[i:i+5] for i in range(0,len(self.lista),5)]
         table = AsciiTable(self.lista)
         print(table.table)
-        plot(self.lista_x,self.lista_y,'o')
+        plot(self.lista_x,self.lista_y,'o-')
+        xlabel('Eje X')
+        ylabel('Eje Y')
         show()
 
     def interfaz_datos_tercer_orden(self):
@@ -75,7 +79,9 @@ class Datos():
         self.lista=[self.lista[i:i+6] for i in range(0,len(self.lista),6)]
         table = AsciiTable(self.lista)
         print(table.table)
-        plot(self.lista_x,self.lista_y,'o')
+        plot(self.lista_x,self.lista_y,'o-')
+        xlabel('Eje X')
+        ylabel('Eje Y')
         show()
 
     def interfaz_datos_cuarto_orden(self):
@@ -101,9 +107,7 @@ class Datos():
         self.lista=[self.lista[i:i+7] for i in range(0,len(self.lista),7)]
         table = AsciiTable(self.lista)
         print(table.table)
-        plot(self.lista_x,self.lista_y,'o')
+        plot(self.lista_x,self.lista_y,'o-')
+        xlabel('Eje X')
+        ylabel('Eje Y')
         show()
-
-
-# instancia=Datos('-2*y+4*e**-x',0,1,2,0.2)
-# instancia.interfaz_datos_tercer_orden()

@@ -23,9 +23,3 @@ class Funcion():
         self.reemplazar_valores()
         self.reemplazar_valores_trigonometria()
         return self.funcion
-
-# funcion='(pi+e)/(x+y)'
-# instancia=Funcion(funcion,9,4)
-# instancia.generar_funcion()
-# expresion=cos(3)**2
-# print(expresion)

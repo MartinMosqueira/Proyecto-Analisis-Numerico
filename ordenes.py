@@ -112,11 +112,3 @@ class cuarto_orden():
     def k(self):
         k=1/6*(self.k_1+2*self.k_2+2*self.k_3+self.k_4)
         return k  
-
-# instancia=cuarto_orden('-2*y+4*e**-x',0,2,0.2)
-# instancia.k1()
-# instancia.k2()
-# instancia.k3()
-# instancia.k4()
-# instancia.k()
-
